@@ -1,17 +1,16 @@
-import axios from "axios"; 
+import axios from "axios";
 
-const searchImages = async(tern) => {
-    const url = 'https://api.unplash.com/search/photos/?client_id=Gn4jNLRJQLlZJXLM2NKyYKMNVOg6_9gA6W-2IWU_lKk'
-
-    const response  = await axios.get(url, {
-        params:{
-            query: term
+async function searchImages(term) {
+    const url = "https://api.unsplash.com/search/photos";
+    const response = await axios.get(url, {
+        params: {
+            query: term,
+            client_id: "uhQlQHNk0GXiwuTJ0wwpj59EmZ0m7UWgiFo6YdnDARU"
         }
-    })
+    });
 
-console.log(response)
-return response.data.results
-
+    console.log(response.data);
+    return response.data.results;
 }
 
-export default searchImages
+export default searchImages;
